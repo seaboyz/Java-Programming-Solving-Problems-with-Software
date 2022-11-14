@@ -38,6 +38,43 @@ public class PerimeterRunner {
         // numOfSides = numOfPoints
         double avgLength = getPerimeter(s) / getNumPoints(s);
         return avgLength;
+    }
+
+    public double getLongestSide(Shape s) {
+        // start with longestSide = 0
+        double longestSide = 0;
+        // start with the prevPoint = the last point of s
+        Point prevPoint = s.getLastPoint();
+        // for each point of Shape s as currPoint
+        for (Point currPoint : s.getPoints()) {
+            // calculate the distance from the currPoint to prevPoint 
+            double distance = currPoint.distance(prevPoint);
+            // if distance > longestSide 
+            if (distance > longestSide) {
+                // longestSide = distance
+                longestSide = distance;
+            }
+            // else no change
+        }
+        // return the the longestSide
+        return longestSide;
+    }
+
+    public double getLargestX(Shape s) {
+        // start with the largestX = Double.NEGATIVE_INFINITY
+        double largestX = Double.NEGATIVE_INFINITY;
+        // for each current point of the shape
+        for (Point currPoint : s.getPoints()) {
+            double currX = currPoint.getX();
+            // if x of the current point > the largestX 
+            if (currX > largestX) {
+                // update the largestX
+                largestX = currX;
+            }
+            // else do nothing
+        }
+        // return largestX
+        return largestX;
 
     }
 
@@ -53,6 +90,12 @@ public class PerimeterRunner {
 
         double avgLength = getAverageLength(s);
         System.out.println("Average length: " + avgLength);
+
+        double longestSide = getLongestSide(s);
+        System.out.println("Longest side: " + longestSide);
+
+        double largestX = getLargestX(s);
+        System.out.println("largestX: " + largestX);
     }
 
     public static void main(String[] args) {
