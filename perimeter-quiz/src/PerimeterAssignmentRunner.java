@@ -1,5 +1,9 @@
-import edu.duke.*;
 import java.io.File;
+
+import edu.duke.DirectoryResource;
+import edu.duke.FileResource;
+import edu.duke.Point;
+import edu.duke.Shape;
 
 public class PerimeterAssignmentRunner {
     public double getPerimeter(Shape s) {
@@ -126,6 +130,13 @@ public class PerimeterAssignmentRunner {
         return fileWithTheLargestPerimeter.getName();
     }
 
+    public void testAverageLength() {
+        FileResource fr = new FileResource();
+        Shape s = new Shape(fr);
+        double averageLength = getAverageLength(s);
+        System.out.println("Average Length: " + averageLength);
+    }
+
     public void testPerimeter() {
         FileResource fr = new FileResource();
         Shape s = new Shape(fr);
@@ -133,7 +144,7 @@ public class PerimeterAssignmentRunner {
         System.out.println("perimeter = " + length);
     }
 
-    public void testPerimeterMultipleFiles() {
+    public void testLargestPerimeterMultipleFiles() {
         DirectoryResource dr = new DirectoryResource();
 
         double largestPerimerter = getLargestPerimeterMultipleFiles(dr);
@@ -145,6 +156,13 @@ public class PerimeterAssignmentRunner {
         DirectoryResource dr = new DirectoryResource();
         String fileName = getFileWithLargestPerimeter(dr);
         System.out.println("File with the largest perimeter: " + fileName);
+    }
+
+    public void testLongestSide() {
+        FileResource fr = new FileResource();
+        Shape s = new Shape(fr);
+        double longestSide = getLongestSide(s);
+        System.out.println("Longest Side: " + longestSide);
     }
 
     // This method creates a triangle that you can use to test your other methods
