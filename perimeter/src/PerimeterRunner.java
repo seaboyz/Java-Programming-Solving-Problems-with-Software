@@ -1,3 +1,6 @@
+import java.io.File;
+
+import edu.duke.DirectoryResource;
 import edu.duke.FileResource;
 import edu.duke.Point;
 import edu.duke.Shape;
@@ -96,6 +99,8 @@ public class PerimeterRunner {
 
         double largestX = getLargestX(s);
         System.out.println("largestX: " + largestX);
+
+        System.out.println("LargestPerimerter: " + getLargestPerimeterMultipleFiles());
     }
 
     public static void main(String[] args) {
