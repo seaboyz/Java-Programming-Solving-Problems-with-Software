@@ -18,14 +18,14 @@ public class Part1 {
             return result;
         }
         // else update the result with the substring between "ATG" and "TAA"
-        result = dna.substring(startCodonIndex + 3, stopCodonIndex);
+        result = dna.substring(startCodonIndex, stopCodonIndex + 3);
         // return result
         return result;
     }
 
     public void testSimpleGene() {
         // dna with "ATG", without "TAA"
-        String dna1 = "ATGGCTAATCCG";
+        String dna1 = "AAATGCCCTAACTAGATTAAGAAACC";
         // dna without "ATG", with "TAA"
         String dna2 = "CGTATAAGCTAA";
         // dna without "ATG" and "TAA"
